@@ -1,6 +1,6 @@
 # Last.fm Spotify App
 
-Created at Music Hack Day Amsterdam 2012
+Created at Music Hack Day Amsterdam 2012. Modeled after [http://amsterdam.last.fm/].
 
 ## Installation
 

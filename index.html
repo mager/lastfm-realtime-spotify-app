@@ -30,12 +30,18 @@
                     $.get(url, function (response) {
                         var uri = response.spotify.track.externalids.spotify;
                         if (uri) {
-                            resource = resource.artist.name+': '+resource.title;
-                            songlist.append('<li><a href="'+uri+'">'+resource+'</a> ('+ count +')</li>');
+                            var song = resource.artist.name+': '+resource.title;
+                            songlist.append('<li><a href="'+uri+'">'+song+'</a> ('+ count +')</li>');
                         }
                     });
                 }
 
+
+                q1 = new lfmc_CountFeed()
+                    .onData(function(count) { 
+                        $('.count').text('('+count+')'); 
+                    })
+                    .run();
 
                 /* Get sockety with Last.fm */
                 q2 = new lfmc_TopFeed('track')
@@ -70,12 +76,11 @@
     <body>
         <div id="wrapper">
             <h1>Showing data from the Last.fm Realtime API</h1>
-            <p class="description">Experimental: Music Hack Day Amsterdam 2012</p>
+            <p class="description">Created at Music Hack Day Amsterdam 2012. Source on <a href="https://github.com/mager/lastfm-realtime-spotify-app/">Github.</a></p>
 
-            <h3>The Javascript</h3>
-
-            <h3>Live Example</h3>
+            <h3>Top songs being listened to right now on Last.fm <span class="count"></span></h3>
             <ul id="songlist"></ul>
+
             <!-- Cool stuff goes here -->
         </div><!-- /wrapper -->
     </body>
