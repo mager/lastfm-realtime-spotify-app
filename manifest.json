@@ -1,0 +1,23 @@
+{
+	"AppDescription": {
+		"en": "Show Last.fm Realtime top tracks"
+	},
+	"AppIcon": {
+		"36x18": "tutorial.png"
+	},
+	"AppName": {
+		"en": "Last.fm Realtime"
+	},
+	"BundleIdentifier": "lastfm-realtime-spotify-app",
+	"BundleType": "Application",
+	"BundleVersion": "0.1",
+	"RequiredInterface": 1,
+	"RequiredPermissions": [
+	    "http://amsterdam.last.fm",
+	    "http://ws.audioscrobbler.com/"
+	],
+	"SupportedLanguages": [
+		"en"
+	],
+	"VendorIdentifier": "co.mager"
+}
